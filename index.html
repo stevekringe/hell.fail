@@ -1,5 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
             data-ad-client="ca-pub-5931548642119443"
             async
@@ -8,6 +11,68 @@
         <title>hell.fail</title>
 
         <style>
+            @font-face {
+                font-family: Allo;
+                src: url("assets/fonts/AlloVariable.woff2") format("woff2");
+                font-style: normal;
+                font-weight: 100 900;
+                font-display: swap;
+            }
+
+            body {
+                font-family: Allo, system-ui, sans-serif;
+                font-variation-settings: "ROND" 100;
+            }
+
+            .social-links,
+            .text-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+            }
+
+            .social-links a {
+                display: grid;
+                place-items: center;
+                box-sizing: border-box;
+                width: 3rem;
+                height: 3rem;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+            }
+
+            .social-links a:hover {
+                background-color: #f2f2f2;
+            }
+
+            .text-links {
+                margin-top: 1rem;
+            }
+
+            .albums {
+                margin-block: 2rem;
+            }
+
+            .bandcamp-players {
+                display: grid;
+                grid-template-columns: minmax(0, 25rem);
+                justify-content: center;
+                gap: 0.75rem;
+            }
+
+            .bandcamp-players iframe {
+                display: block;
+                width: 100%;
+                border: 0;
+            }
+
+            @media (min-width: 64rem) {
+                .bandcamp-players {
+                    grid-template-columns: repeat(3, minmax(0, 25rem));
+                }
+            }
+
             .video-container {
                 position: relative;
                 padding-bottom: 56.25%;
@@ -67,34 +132,61 @@
     </head>
     <body>
         <center>
-            <h1>links</h1>
-            <a href="https://www.instagram.com/steve.kringe">instagram</a>
-            <br /><br />
-            <a href="https://www.tiktok.com/@steve.kringe">tiktok</a>
-            <br /><br />
-            <a href="https://www.twitch.tv/steve_kringe">twitch</a>
+            <h1 id="links">links</h1>
+            <nav aria-labelledby="links">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/steve.kringe">
+                        <img src="assets/icons/instagram.svg" width="22" height="22" alt="Instagram" />
+                    </a>
+                    <a href="https://www.tiktok.com/@steve.kringe">
+                        <img src="assets/icons/tiktok.svg" width="22" height="22" alt="TikTok" />
+                    </a>
+                    <a href="https://www.twitch.tv/steve_kringe">
+                        <img src="assets/icons/twitch.svg" width="22" height="22" alt="Twitch" />
+                    </a>
+                    <a href="https://www.youtube.com/@umadumadumad/shorts">
+                        <img src="assets/icons/youtube.svg" width="22" height="22" alt="YouTube" />
+                    </a>
+                    <a href="https://www.twitter.com/stevekringe">
+                        <img src="assets/icons/x-twitter.svg" width="22" height="22" alt="X (Twitter)" />
+                    </a>
+                </div>
+                <div class="text-links">
+                    <a href="https://stevekringe.bandcamp.com/">bandcamp</a>
+                    <a href="https://stevekringe.substack.com/">substack</a>
+                    <a href="https://kringestore.printify.me/">merch</a>
+                    <a href="https://www.patreon.com/user?u=23195479">patreon</a>
+                    <a href="https://buymeacoffee.com/steve.kringe">support</a>
+                </div>
+            </nav>
 
-            <br /><br />
-            <a href="https://www.youtube.com/@umadumadumad/shorts">youtube</a>
-            <br /><br />
-            <a href="https://www.twitter.com/stevekringe">twitter</a>
-            <!--
-  <a href="https://www.youtube.com/channel/UCYqKGCXacqaqDOAcRTl1Npg">youtube</a>
--->
-            <br /><br />
-            <a href="https://stevekringe.bandcamp.com/">bandcamp</a>
-            <!--
-  <a href="https://www.youtube.com/channel/UCYqKGCXacqaqDOAcRTl1Npg">youtube</a>
--->
-            <br /><br />
-            <a href="https://stevekringe.substack.com/">substack</a>
-            <br /><br />
-            <a href="https://kringestore.printify.me/">merch</a>
-            <br /><br />
-            <a href="https://www.patreon.com/user?u=23195479">patreon</a>
-            <br /><br />
-            <a href="https://buymeacoffee.com/steve.kringe">support</a>
-            <br /><br />
+            <section class="albums" aria-labelledby="albums">
+                <h1 id="albums">albums</h1>
+                <div class="bandcamp-players">
+                    <iframe
+                        width="400"
+                        height="120"
+                        src="https://bandcamp.com/EmbeddedPlayer/v=2/album=2700789281/size=large/tracklist=false/artwork=small/"
+                        title="the art world on Bandcamp"
+                        loading="lazy"
+                    ></iframe>
+                    <iframe
+                        width="400"
+                        height="120"
+                        src="https://bandcamp.com/EmbeddedPlayer/v=2/album=4271303463/size=large/tracklist=false/artwork=small/"
+                        title="the required sadness on Bandcamp"
+                        loading="lazy"
+                    ></iframe>
+                    <iframe
+                        width="400"
+                        height="120"
+                        src="https://bandcamp.com/EmbeddedPlayer/v=2/album=2898450493/size=large/tracklist=false/artwork=small/"
+                        title="the routine on Bandcamp"
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </section>
+
             <h1>videos</h1>
             <div class="videoWrapper">
                 <iframe
